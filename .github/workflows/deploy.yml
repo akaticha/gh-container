@@ -12,7 +12,7 @@ jobs:
     environment: Stage
     runs-on: ubuntu-latest
     env:
-#      MONGODB_CONNECTION_PROTOCOL: mongodb+srv
+      MONGODB_CONNECTION_PROTOCOL: mongodb #+srv
       MONGODB_CLUSTER_ADDRESS: cluster0.qm78bpq.mongodb.net/?appName=Cluster0
       MONGODB_USERNAME: ${{ secrets.MONGODB_USERNAME }}
       MONGODB_PASSWORD: ${{ secrets.MONGODB_PASSWORD }}
