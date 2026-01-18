@@ -13,10 +13,6 @@ console.log('Trying to connect to db');
 console.log(`uri: ${uri}`);
 
 try {
-// Execute a find command
-  await collection
-      .find({ $where: "sleep(100) || true" })
-      .maxTimeMS(50);
   await client.connect();
   await client.db(dbName).command({ ping: 1 });
   console.log('Connected successfully to server');
@@ -24,6 +20,7 @@ try {
   console.log('Connection failed.');
   await client.close();
   console.log('Connection closed.');
+  console.log(error.toString());
   process.exit(1);
 }
 
