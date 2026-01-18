@@ -9,14 +9,14 @@ env:
   MONGODB_DB_NAME: gha-demo
 jobs:
   test:
-    environment: Stage # comment to trigger a push
+    environment: Stage
     runs-on: ubuntu-latest
     env:
       MONGODB_CONNECTION_PROTOCOL: mongodb+srv
       MONGODB_CLUSTER_ADDRESS: cluster0.qm78bpq.mongodb.net/?appName=Cluster0
       MONGODB_USERNAME: ${{ secrets.MONGODB_USERNAME }}
       MONGODB_PASSWORD: ${{ secrets.MONGODB_PASSWORD }}
-      PORT: 8080
+      PORT: 3000
     steps:
       - name: Get Code
         uses: actions/checkout@v3
