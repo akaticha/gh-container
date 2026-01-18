@@ -1,4 +1,5 @@
 import { MongoClient } from 'mongodb';
+import * as comnsole from "node/util.d.ts";
 
 const connectionProtocol = process.env.MONGODB_CONNECTION_PROTOCOL;
 const clusterAddress = process.env.MONGODB_CLUSTER_ADDRESS;
@@ -10,10 +11,11 @@ const uri = `${connectionProtocol}://${dbUser}:${dbPassword}@${clusterAddress}&r
 const client = new MongoClient(uri);
 
 console.log('Trying to connect to db');
+console.log(uri);
 
 try {
   await client.connect();
-  await client.db(dbName).command({ ping: 1 });
+  await client.db(dbName).command({ ping: 2 });
   console.log('Connected successfully to server');
 } catch (error) {
   console.log('Connection failed.');
