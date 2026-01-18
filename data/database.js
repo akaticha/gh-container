@@ -10,7 +10,7 @@ const uri = `${connectionProtocol}://${dbUser}:${dbPassword}@${clusterAddress}&r
 const client = new MongoClient(uri);
 
 console.log('Trying to connect to db');
-console.log(uri);
+console.log(`uri: ${uri}`);
 
 try {
   await client.connect();
