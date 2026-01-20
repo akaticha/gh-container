@@ -15,7 +15,7 @@ jobs:
 #      image: node:24-alpine
     env:
       MONGODB_CONNECTION_PROTOCOL: mongodb # +srv
-      MONGODB_CLUSTER_ADDRESS: 127.0.0.1:27017 # mongodb/? # cluster0.qm78bpq.mongodb.net/?appName=Cluster0
+      MONGODB_CLUSTER_ADDRESS: 127.0.0.1:27017/? # mongodb/? # cluster0.qm78bpq.mongodb.net/?appName=Cluster0
       MONGODB_USERNAME: root # ${{ secrets.MONGODB_USERNAME }}
       MONGODB_PASSWORD: example # ${{ secrets.MONGODB_PASSWORD }}
       PORT: 3000
